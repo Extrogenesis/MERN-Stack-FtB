@@ -3,7 +3,9 @@ const express = require('express')
 const app = express()
 
 
-const PORT = process.env.PORT || 5000
+app.get('/', (req, res) => res.send("API BLOB"))
+
+const PORT = process.env.PORT || 5000 //heroku uses process.env.PORT 
 
 
-app.listen()
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
